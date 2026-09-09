@@ -1846,7 +1846,8 @@ void MainWindow::setup_status_bar() {
     auto get_filter_names = [this]() -> QStringList {
         if (emuenv.cfg.current_config.backend_renderer == "Vulkan")
             return { QStringLiteral("Nearest"), QStringLiteral("Bilinear"),
-                QStringLiteral("Bicubic"), QStringLiteral("FXAA"), QStringLiteral("FSR") };
+                QStringLiteral("Bicubic"), QStringLiteral("FXAA"), QStringLiteral("FSR"),
+                QStringLiteral("NSS (Experimental)") };
         else
             return { QStringLiteral("Bilinear"), QStringLiteral("FXAA") };
     };

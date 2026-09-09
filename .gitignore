@@ -84,3 +84,10 @@ fastlane/readme.md
 
 # Copilot local config
 .github/copilot-instructions.md
+
+# Replit workspace metadata
+.agents/
+.local/
+.replit
+.replitignore
+replit.md

@@ -2,6 +2,18 @@
 
 A fork of Vita3K with additional game compatibility and rendering fixes. All credit for the emulator itself belongs to the Vita3K team.
 
+## ViaXTrace Android research fork
+
+This repository is based on [nckstwrt/Vita3K-Plus](https://github.com/nckstwrt/Vita3K-Plus)
+and adds an opt-in `NSS (Experimental)` Vulkan screen filter for Android. NSS is
+a no-cost shader approximation inspired by the observable shape of modern
+neural-rendering workflows; it is **not NVIDIA DLSS**, does not bundle NVIDIA
+code or models, and is not endorsed by NVIDIA.
+
+The scope, reference analysis, compatibility limits, and roadmap are documented
+in [`docs/dlss5-android-spec.md`](./docs/dlss5-android-spec.md). APKs are built
+by public GitHub Actions and tagged releases are published automatically.
+
 ## Download
 
 https://github.com/nckstwrt/Vita3K-Plus/releases
