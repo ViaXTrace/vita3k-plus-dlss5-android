@@ -75,13 +75,13 @@ jobs:
             qt_install_deps: 'false'
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           submodules: recursive
 
       - name: Restore cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         if: ${{ matrix.cache_path != '' }}
         with:
           path: ${{ matrix.cache_path }}
@@ -109,7 +109,7 @@ jobs:
           arch: ${{ matrix.arch }}
         if: matrix.platform == 'windows-x64'
 
-      - uses: mozilla-actions/sccache-action@v0.0.10
+      - uses: mozilla-actions/sccache-action@v0.0.11
         if: startsWith(matrix.platform, 'linux-') || matrix.platform == 'windows-x64'
         with:
           disable_annotations: true
@@ -222,13 +222,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           submodules: recursive
 
       - name: Restore native dependency cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             /usr/local/share/vcpkg/installed
@@ -238,7 +238,7 @@ jobs:
             cache-android-native-
 
       - name: Set up Java
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: '17'
@@ -258,7 +258,7 @@ jobs:
           VCPKG_ROOT: /usr/local/share/vcpkg
         run: bash ./.ci/setup-android.sh
 
-      - uses: hendrikmuhs/ccache-action@v1.2.23
+      - uses: hendrikmuhs/ccache-action@v1.2.24
 
       - name: Decode Android keystore
         env:
@@ -304,7 +304,7 @@ jobs:
       github.ref == 'refs/heads/master' &&
       github.repository == 'Vita3K/Vita3K'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
